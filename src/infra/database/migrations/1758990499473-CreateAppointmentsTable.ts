@@ -9,7 +9,6 @@ export class CreateAppointmentsTable1758990499473
                 id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
                 tenant_id uuid NOT NULL REFERENCES tenants(id) ON DELETE CASCADE,
                 calendar_id uuid NOT NULL REFERENCES calendars(id) ON DELETE CASCADE,
-                service_id uuid REFERENCES services(id),
                 customer_id uuid REFERENCES customers(id),
                 created_by uuid REFERENCES users(id), -- quem criou (staff) se aplicável
                 start_at timestamptz NOT NULL,
