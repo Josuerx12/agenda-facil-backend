@@ -11,6 +11,7 @@ const config: DataSourceOptions = {
   entities: ['src/**/*.entity{.ts,.js}'],
   migrations: ['src/infra/database/migrations/*{.ts,.js}'],
   synchronize: false,
+  logging: process.env.MODE === 'development',
 };
 
 export const AppDataSource = new DataSource(config);
